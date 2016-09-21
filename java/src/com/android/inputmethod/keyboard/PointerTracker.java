@@ -912,7 +912,7 @@ public final class PointerTracker implements PointerTrackerQueue.Element {
         case MotionEvent.ACTION_DOWN:
         case MotionEvent.ACTION_POINTER_DOWN:
             onDownEvent(x, y, eventTime, handler);
-            if(getKeyOn(x, y).mCode==Constants.CODE_SHIFT && bool){
+            if(getKeyOn(x, y) != null && getKeyOn(x, y).mCode==Constants.CODE_SHIFT && bool){
               SystemClock.sleep(100);
               Log.d(TAG,"ACTION_POINTER_DOWN------");
               onDownEvent(x, y, eventTime, handler);
